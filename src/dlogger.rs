@@ -1,5 +1,4 @@
 use time::OffsetDateTime;
-use std::fmt;
 use lightning::util::logger::{Logger, Record};
 
 struct DLogger();
@@ -9,7 +8,7 @@ impl Logger for DLogger {
         let raw_log = record.args.to_string();
         let log = format!(
             "{} {:<5} [{}:{}] {}\n",
-            OffsetDateTime::now_utc(),
+            OffsetDateTime::now_utc().unix_timestamp(),
             record.level.to_string(),
             record.module_path,
             record.line,

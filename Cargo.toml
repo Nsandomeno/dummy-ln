@@ -8,4 +8,10 @@ edition = "2021"
 [dependencies]
 bitcoin = "0.29.2"
 lightning = { version = "0.0.113", features = ["max_level_trace"] }
+lightning-background-processor = "0.0.113"
+lightning-block-sync = { version = "0.0.113", features = ["rpc-client"] }
+lightning-invoice = "0.21.0"
+lightning-net-tokio = "0.0.113"
+lightning-persister = "0.0.113"
+lightning-rapid-gossip-sync = "0.0.113"
 time = "0.3.17"
