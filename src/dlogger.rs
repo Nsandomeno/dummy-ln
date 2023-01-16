@@ -1,7 +1,13 @@
 use time::OffsetDateTime;
 use lightning::util::logger::{Logger, Record};
 
-struct DLogger();
+pub struct DLogger();
+
+impl DLogger {
+    pub fn new() -> DLogger {
+        DLogger()
+    }
+}
 
 impl Logger for DLogger {
     fn log(&self, record: &Record) {

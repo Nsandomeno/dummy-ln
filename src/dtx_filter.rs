@@ -3,8 +3,14 @@ use bitcoin::blockdata::script::Script;
 
 use lightning::chain::Filter;
 use lightning::chain::WatchedOutput;
-
+// Bitcoin Node Interface is required here (confirm this TODO)
 pub struct DTxFilter();
+
+impl DTxFilter {
+    pub fn new() -> DTxFilter {
+        DTxFilter()
+    }
+}
 
 impl Filter for DTxFilter {
     fn register_tx(&self, txid: &Txid, script_pubkey: &Script) {

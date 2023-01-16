@@ -6,6 +6,12 @@ use lightning::chain::channelmonitor::{ChannelMonitor, ChannelMonitorUpdate};
 
 pub struct DPersister();
 
+impl DPersister {
+    pub fn new() -> DPersister {
+        DPersister()
+    }
+}
+
 impl <ChannelSigner: Sign> Persist<ChannelSigner> for DPersister {
     fn persist_new_channel(&self, channel_id: OutPoint, data: &ChannelMonitor<ChannelSigner>, update_id: MonitorUpdateId) -> ChannelMonitorUpdateStatus {
         // <insert code to persist the ChannelMonitor to disk and/or backups>

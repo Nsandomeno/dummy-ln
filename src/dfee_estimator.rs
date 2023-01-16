@@ -1,6 +1,12 @@
 use lightning::chain::chaininterface::{FeeEstimator, ConfirmationTarget};
-
+// Bitcoin Node Interface is required here.
 pub struct DFeeEstimator();
+
+impl DFeeEstimator {
+    pub fn new() -> DFeeEstimator {
+        DFeeEstimator()
+    }
+}
 
 impl FeeEstimator for DFeeEstimator {
     fn get_est_sat_per_1000_weight(&self, confirmation_target: ConfirmationTarget) -> u32 {
