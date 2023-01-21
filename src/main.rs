@@ -83,9 +83,10 @@ async fn start() {
     // Handling directly by a ldk struct FileSystemPersister in ldk-sample
     // TODO - See reference in ldk-sample once custom component is developed
     // Should start with default implementation of component
+    // TODO # 1 REDO SKELETON PERSIST COMPONENT
     let persister = Arc::new(DPersister());
     // Step 4 (a) Tx Filter (None for now - Revisit later)
-    
+
 }
 
 
